@@ -18,7 +18,7 @@ Installed Flutter SDK.
 ### Installing
 0. If you want to test it with ready backend you can miss steps 1-5.
 1. Create new Lambda function with any name you want.
-2. Copy content of lambda_function.py to your lambda function or copy from here:
+2. Copy content of backend/lambda_function.py to your lambda function or copy from here:
 ``` python 
 import urllib3
 import json 
