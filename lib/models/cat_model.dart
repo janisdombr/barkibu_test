@@ -1,7 +1,9 @@
-import 'dart:convert';
-
-import 'package:flutter/material.dart';
 /// Model for Cat
+/// structure of Cat object has been taken from API json
+/// I don't use Datetime for createdAt and updatedAt
+/// because data from API is unreadable for parser and to save time
+/// I will use String for it
+
 class Cat {
   final String id;
   final List<String> tags;

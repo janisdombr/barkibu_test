@@ -2,6 +2,10 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/cat_model.dart';
 
+/// Repository for Cat
+/// Here is necessary to change endpoint if you want to test backend
+/// see /models/cat_model.dart for more details of Cat model
+
 class CatRepository {
   String endpoint = 'https://rsawmit7lbvfka2pwd3xhwouw40fnfpc.lambda-url.eu-central-1.on.aws/';
   String imageUrlPAth = 'https://cataas.com/cat/';

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:barkibu_test/models/cat_model.dart';
 
+/// Widget for CatDetailsScreen
+/// I will use simple layout with image and text under it
+/// Image in from network so it will be necessary to mock it while testing
+
 class CatDetailsScreen extends StatelessWidget {
   const CatDetailsScreen({super.key, required this.cat, required this.imagePathUrl});
   final String imagePathUrl;

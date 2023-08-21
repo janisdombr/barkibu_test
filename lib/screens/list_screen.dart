@@ -4,9 +4,14 @@ import '../models/cat_model.dart';
 import '../repositories/cat_repository.dart';
 import 'cat_details_screen.dart';
 
+/// Screen for displaying list of cats
+/// I use FutureBuilder to get data from API
+/// and display it in ListView
+/// with Image, owner name and button to expand item
+
 class ListScreen extends StatelessWidget {
   ListScreen({super.key});
-  CatRepository catsRepo = CatRepository();
+  final CatRepository catsRepo = CatRepository();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +34,7 @@ class ListScreen extends StatelessWidget {
                 }
                 List<Cat> cats = snapshot.data!;
                 return ListView.builder(
-                  itemCount: cats!.length,
+                  itemCount: cats.length,
                   itemBuilder: (BuildContext context, int index) {
                     return Padding(
                       padding: const EdgeInsets.all(10.0),
@@ -37,15 +42,15 @@ class ListScreen extends StatelessWidget {
                         height: 100,
                         child: Row(
                           children: [
-                            Image.network(catsRepo!.imageUrlPAth+cats![index].id, width: 100, height: 100, fit: BoxFit.fill),
+                            Image.network(catsRepo.imageUrlPAth+cats[index].id, width: 100, height: 100, fit: BoxFit.fill),
                             Expanded(child: Padding(
                               padding: const EdgeInsets.all(10.0),
-                              child: Text( (cats![index].owner == "null" ? "No owner" : cats![index].owner)),
+                              child: Text( (cats[index].owner == "null" ? "No owner" : cats[index].owner)),
                             )),
                             // button to expand item
                             IconButton(
                               onPressed: () {
-                                openCatDetails(cats![index], context);},
+                                openCatDetails(cats[index], context);},
                                 icon: const Icon(Icons.arrow_forward_ios)
                             ),
                           ],
